@@ -1,0 +1,38 @@
+﻿@model ProyectoSeminarioControlNotas.Models.Carrera
+
+@{
+    ViewData["Title"] = "Eliminar carrera";
+}
+
+<h1>Eliminar carrera</h1>
+
+<h3>¿Estás seguro que quieres eliminar esta carrera?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.codigoCarrera)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.codigoCarrera)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="idCarrera" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver a la lista</a>
+    </form>
+</div>
